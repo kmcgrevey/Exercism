@@ -1,6 +1,12 @@
 class Array
+  # def keep
+  #   (self.map { |elem| elem if yield(elem) }).compact
+  # end
   def keep
-    (self.map { |elem| elem if yield(elem) }).compact
+    self.reduce([]) do |keep, elem|
+      keep << elem if yield(elem)
+      keep
+    end
   end
 
   def discard
