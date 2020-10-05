@@ -1,18 +1,16 @@
 class Luhn
   def self.valid?(num)
-    if num.length <= 1
-      # binding.pry
+    nums = (num.gsub(" ","")).reverse.split("")
+    if nums.length <= 1 || nums.any? { |item| !(("0".."9").include?(item)) }
       false
     else
-      luhn_check(num)
+      check_luhn(nums)
     end
   end
-  
-  def self.luhn_check(num)
-    nums = num.split("").map { |num| num.to_i }
-    first_nums = firsts(nums)
-    second_nums = seconds(nums)
-    ((first_nums+second_nums).sum) % 10 == 0
+
+  def self.check_luhn(nums)
+    nums_clean = nums.map { |num| num.to_i }
+    ((firsts(nums_clean) + seconds(nums_clean)).sum) % 10 == 0
   end
   
   def self.firsts(nums)
@@ -22,13 +20,8 @@ class Luhn
   def self.seconds(nums)
     list = nums.find_all.each_with_index { |dig, index| index.odd?}
     list.map do |dig|
-      if (dig * 2) > 9
-        (dig * 2) - 9
-      else
-        dig
-      end
+      (dig * 2) > 9 ? ((dig * 2) - 9) : (dig * 2)
     end
   end
-
 end
 
