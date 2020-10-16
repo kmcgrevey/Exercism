@@ -13,8 +13,5 @@ class Matrix:
         return list
 
     def cleanup(self, matrix_string):
-        list = []
         rows = matrix_string.split('\n')
-        for row in rows:
-            list.append([int(num) for num in row.split(' ')])
-        return list
+        return [[int(num) for num in row.split(' ')] for row in rows]
