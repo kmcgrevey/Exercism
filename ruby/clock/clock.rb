@@ -8,27 +8,25 @@ class Clock
   
   def make_time
     make_hours
-    if @minutes && (@minutes >= 60 || @minutes.negative?)
-      min_hr = @minutes / 60
-      mins = @minutes - (min_hr * 60)
-      @hours += min_hr
-      # @hours >= 24 ? make_hours : @hours
-      @hours = make_hours
-      @minutes = mins
-    end
-
-    time = Time.new(2001, 01, 01, @hours, @minutes)
-    time.strftime("%H:%M")
-    # binding.pry
+    make_minutes
+    Time.new(2001, 01, 01, @hours, @minutes)
   end
 
   def make_hours
     @hours ? (@hours = @hours % 24) : (@hours = 0)
   end
 
+  def make_minutes
+    if @minutes && (@minutes >= 60 || @minutes.negative?)
+      min_hr = @minutes / 60
+      @minutes -= (min_hr * 60)
+      @hours += min_hr
+      @hours = make_hours
+    end
+  end
+
   def to_s
-    # make_time.strftime("%H:%M")
-    make_time
+    make_time.strftime("%H:%M")
   end
 
   def +(new_clock)
