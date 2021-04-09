@@ -1,30 +1,23 @@
 class Phrase
 
- def initialize(phrase)
-  @phrase = phrase
- end
-
- def word_count
-  words = split_phrase
-  words.reduce(Hash.new(0)) do |count, word|
-    count[word] +=1
-    count
+  def initialize(phrase)
+    @phrase = phrase
   end
- end
 
- def split_phrase
-  # regexp split on one or more non-word characters --> \W+
-  splitted = @phrase.downcase.split(/\W+/)
-  splitted.reject { |item| item.empty? }
- end
+  def word_count
+    words = split_phrase
+    words.reduce(Hash.new(0)) do |count, word|
+      count[word] +=1
+      count
+    end
+  end
+
+  def split_phrase
+    # remove single quotes first
+    phrase = @phrase.gsub(/(?<!\w)'|'(?!\w)/, '')
+    # regexp split but leaves apostrophy as only non-word
+    splitted = phrase.downcase.split(/[^'\w]+/)
+    splitted.reject { |item| item.empty? }
+  end
 
 end
-
-=begin
-Write your code for the 'Word Count' exercise in this file. Make the tests in
-`word_count_test.rb` pass.
-
-To get started with TDD, see the `README.md` file in your
-`ruby/word-count` directory.
-=end
-
