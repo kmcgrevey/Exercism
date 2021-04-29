@@ -1,12 +1,8 @@
 class Year
 
     def self.leap?(year)
-      # binding.pry
-      if year % 4 == 0
-        true
-      else
-        false
-      end
+      return true if (year % 4 == 0) && (year % 100 != 0)
+      return true if (year % 4 == 0) && (year % 400 == 0)
     end
 
 end
