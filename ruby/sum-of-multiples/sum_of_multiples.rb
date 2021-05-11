@@ -1,7 +1,7 @@
 class SumOfMultiples
 
-  def initialize(num1, num2)
-    @numbers = [num1, num2]
+  def initialize(*numbers)
+    @numbers = numbers
   end
 
   def to(limit)
@@ -9,6 +9,7 @@ class SumOfMultiples
 
     @numbers.each do |num|
       multiplier = 1
+      next if num * multiplier == 0
       while num * multiplier < limit
         list << num * multiplier
         multiplier += 1
