@@ -14,7 +14,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_two_anagrams
-    skip
+    # skip
     detector = Anagram.new('master')
     anagrams = detector.match(["stream", "pigeon", "maters"])
     expected = ["maters", "stream"]
@@ -22,7 +22,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_does_not_detect_anagram_subsets
-    skip
+    # skip
     detector = Anagram.new('good')
     anagrams = detector.match(["dog", "goody"])
     expected = []
@@ -30,7 +30,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_anagram
-    skip
+    # skip
     detector = Anagram.new('listen')
     anagrams = detector.match(["enlists", "google", "inlets", "banana"])
     expected = ["inlets"]
@@ -38,7 +38,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_three_anagrams
-    skip
+    # skip
     detector = Anagram.new('allergy')
     anagrams = detector.match(["gallery", "ballerina", "regally", "clergy", "largely", "leading"])
     expected = ["gallery", "largely", "regally"]
@@ -46,7 +46,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_multiple_anagrams_with_different_case
-    skip
+    # skip
     detector = Anagram.new('nose')
     anagrams = detector.match(["Eons", "ONES"])
     expected = ["Eons", "ONES"]
@@ -54,7 +54,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_does_not_detect_non_anagrams_with_identical_checksum
-    skip
+    # skip
     detector = Anagram.new('mass')
     anagrams = detector.match(["last"])
     expected = []
@@ -62,7 +62,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_anagrams_case_insensitively
-    skip
+    # skip
     detector = Anagram.new('Orchestra')
     anagrams = detector.match(["cashregister", "Carthorse", "radishes"])
     expected = ["Carthorse"]
@@ -70,7 +70,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_anagrams_using_case_insensitive_subject
-    skip
+    # skip
     detector = Anagram.new('Orchestra')
     anagrams = detector.match(["cashregister", "carthorse", "radishes"])
     expected = ["carthorse"]
@@ -78,7 +78,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_detects_anagrams_using_case_insensitive_possible_matches
-    skip
+    # skip
     detector = Anagram.new('orchestra')
     anagrams = detector.match(["cashregister", "Carthorse", "radishes"])
     expected = ["Carthorse"]
@@ -86,7 +86,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_does_not_detect_an_anagram_if_the_original_word_is_repeated
-    skip
+    # skip
     detector = Anagram.new('go')
     anagrams = detector.match(["go Go GO"])
     expected = []
@@ -94,7 +94,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_anagrams_must_use_all_letters_exactly_once
-    skip
+    # skip
     detector = Anagram.new('tapper')
     anagrams = detector.match(["patter"])
     expected = []
@@ -102,7 +102,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_words_are_not_anagrams_of_themselves_case_insensitive
-    skip
+    # skip
     detector = Anagram.new('BANANA')
     anagrams = detector.match(["BANANA", "Banana", "banana"])
     expected = []
@@ -110,7 +110,7 @@ class AnagramTest < Minitest::Test
   end
 
   def test_words_other_than_themselves_can_be_anagrams
-    skip
+    # skip
     detector = Anagram.new('LISTEN')
     anagrams = detector.match(["Listen", "Silent", "LISTEN"])
     expected = ["Silent"]
