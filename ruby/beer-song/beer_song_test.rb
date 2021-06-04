@@ -15,7 +15,7 @@ class BeerSongTest < Minitest::Test
   end
 
   def test_last_generic_verse
-    skip
+    # skip
     expected = <<~TEXT
     3 bottles of beer on the wall, 3 bottles of beer.
     Take one down and pass it around, 2 bottles of beer on the wall.
@@ -24,7 +24,7 @@ class BeerSongTest < Minitest::Test
   end
 
   def test_verse_with_2_bottles
-    skip
+    # skip
     expected = <<~TEXT
     2 bottles of beer on the wall, 2 bottles of beer.
     Take one down and pass it around, 1 bottle of beer on the wall.
@@ -33,7 +33,7 @@ class BeerSongTest < Minitest::Test
   end
 
   def test_verse_with_1_bottle
-    skip
+    # skip
     expected = <<~TEXT
     1 bottle of beer on the wall, 1 bottle of beer.
     Take it down and pass it around, no more bottles of beer on the wall.
@@ -42,7 +42,7 @@ class BeerSongTest < Minitest::Test
   end
 
   def test_verse_with_0_bottles
-    skip
+    # skip
     expected = <<~TEXT
     No more bottles of beer on the wall, no more bottles of beer.
     Go to the store and buy some more, 99 bottles of beer on the wall.
@@ -51,7 +51,7 @@ class BeerSongTest < Minitest::Test
   end
 
   def test_first_two_verses
-    skip
+    # skip
     expected = <<~TEXT
     99 bottles of beer on the wall, 99 bottles of beer.
     Take one down and pass it around, 98 bottles of beer on the wall.
@@ -63,7 +63,7 @@ class BeerSongTest < Minitest::Test
   end
 
   def test_last_three_verses
-    skip
+    # skip
     expected = <<~TEXT
     2 bottles of beer on the wall, 2 bottles of beer.
     Take one down and pass it around, 1 bottle of beer on the wall.
@@ -78,7 +78,7 @@ class BeerSongTest < Minitest::Test
   end
 
   def test_all_verses
-    skip
+    # skip
     expected = <<~TEXT
     99 bottles of beer on the wall, 99 bottles of beer.
     Take one down and pass it around, 98 bottles of beer on the wall.
