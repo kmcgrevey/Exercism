@@ -38,6 +38,7 @@ export function frontDoorResponse(blurb) {
  * @returns {string}
  */
 export function backDoorResponse(blurb) {
+  blurb = blurb.trim();
   return blurb.charAt(blurb.length-1);
 }
 
