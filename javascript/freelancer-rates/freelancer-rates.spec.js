@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 
 import { dayRate, monthRate, daysInBudget } from './freelancer-rates';
 
@@ -32,7 +32,7 @@ describe('freelancer rates', () => {
     });
   });
 
-  xdescribe('month rate', () => {
+  describe('month rate', () => {
     test('at 16/hour', () => {
       const actual = monthRate(16, 0);
       expect(actual).toBe(2816);
@@ -74,7 +74,7 @@ describe('freelancer rates', () => {
     });
   });
 
-  xdescribe('days in budget', () => {
+  describe('days in budget', () => {
     describe('with a budget of 1280', () => {
       test('at 16/hour', () => {
         const actual = daysInBudget(1280, 16, 0);
@@ -98,7 +98,7 @@ describe('freelancer rates', () => {
       });
     });
 
-    xdescribe('with a budget of 10.000', () => {
+    describe('with a budget of 10.000', () => {
       test('at 25/hour with 5% discount', () => {
         const actual = daysInBudget(10000, 25, 0.05);
         const expected = 52;
