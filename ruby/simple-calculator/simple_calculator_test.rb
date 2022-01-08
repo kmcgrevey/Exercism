@@ -24,27 +24,27 @@ class SimpleCalculatorTest < Minitest::Test
   end
 
   def test_no_number_first_operand_raises_exception
-    skip
+    # skip
     assert_raises(ArgumentError) { SimpleCalculator.calculate('1', 2, '+') }
   end
 
   def test_no_number_second_operand_raises_exception
-    skip
+    # skip
     assert_raises(ArgumentError) { SimpleCalculator.calculate(1, '2', '+') }
   end
 
   def test_raises_exception_for_non_valid_operations
-    skip
+    # skip
     assert_raises(SimpleCalculator::UnsupportedOperation) { SimpleCalculator.calculate(1, 2, '**') }
   end
 
   def test_raises_exception_when_operation_is_nil
-    skip
+    # skip
     assert_raises(SimpleCalculator::UnsupportedOperation) { SimpleCalculator.calculate(1, 2, nil) }
   end
 
   def test_raises_exception_when_operation_is_an_empty_string
-    skip
+    # skip
     assert_raises(SimpleCalculator::UnsupportedOperation) { SimpleCalculator.calculate(1, 2, '') }
   end
 end
